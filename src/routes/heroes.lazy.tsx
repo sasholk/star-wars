@@ -1,11 +1,12 @@
 // Route files with the .lazy.tsx extension are lazy loaded via separate bundles to keep the main bundle size as lean as possible.
 
-import { createLazyFileRoute } from '@tanstack/react-router'
+import { createLazyFileRoute } from "@tanstack/react-router"
+import { PageTransition } from "../components/shared/PageTransion/PageTransition"
 
-export const Route = createLazyFileRoute('/heroes')({
-	component: Heroes,
+export const Route = createLazyFileRoute("/heroes")({
+	component: Heroes
 })
 
-function Heroes() {
-	return <div className='p-2'>Hello from Heroes!</div>
+export function Heroes() {
+	return <PageTransition>Hello from Heroes!</PageTransition>
 }
