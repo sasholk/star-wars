@@ -7,5 +7,5 @@ export const Route = createLazyFileRoute('/heroes')({
 })
 
 function Heroes() {
-	return <div className='p-10'>Hello from Heroes!</div>
+	return <div className='p-2'>Hello from Heroes!</div>
 }

@@ -1,5 +1,5 @@
 // Route files with the .lazy.tsx extension are lazy loaded via separate bundles to keep the main bundle size as lean as possible.
-
+import groguImage from '@img/grogu.jpg'
 import { createLazyFileRoute } from '@tanstack/react-router'
 
 export const Route = createLazyFileRoute('/')({
@@ -8,8 +8,9 @@ export const Route = createLazyFileRoute('/')({
 
 function Index() {
 	return (
-		<div className='p-2'>
-			<h1>Welcome</h1>
+		<div className='p-2 container'>
+			<img src={groguImage} alt='Image' />
+			<h1 className='text-3xl font-bold'>Welcome</h1>
 			<p>
 				Ever wondered what it's like to hang out with Luke Skywalker, chill with
 				Yoda, or maybe borrow Han Solo’s Millennium Falcon for a weekend spin?
