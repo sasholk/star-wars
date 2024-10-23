@@ -5,7 +5,11 @@ export const HomePage: React.FC = () => {
 		<div className='flex flex-col items-center justify-center gap-10 md:mt-10 md:flex-row'>
 			<div className='flex flex-col gap-4 md:gap-12'>
 				<h1 className='text-5xl font-bold md:text-7xl'>
-					Welcome <span className='hidden md:inline'>Star Explorer</span>!
+					Welcome🖖{' '}
+					<span className='hidden md:inline'>
+						<br />
+						Star Explorer!
+					</span>
 				</h1>
 				<p className='flex flex-col gap-4 md:text-lg'>
 					<span className='hidden md:inline'>
