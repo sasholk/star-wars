@@ -1,6 +1,7 @@
-import { createRootRoute, Link, Outlet } from "@tanstack/react-router"
-import { TanStackRouterDevtools } from "@tanstack/router-devtools"
-import { AnimatePresence, motion } from "framer-motion"
+import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
+import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+import { AnimatePresence, motion } from 'framer-motion'
+import StarButton from '../components/ui/StarButton'
 
 export const Route = createRootRoute({
 	component: () => (
@@ -10,13 +11,13 @@ export const Route = createRootRoute({
 					to='/'
 					className='[&.active]:font-bold'
 				>
-					Home
+					<StarButton name='Home' />
 				</Link>
 				<Link
 					to='/heroes'
 					className='[&.active]:font-bold'
 				>
-					Heroes
+					<StarButton name='Heroes' />
 				</Link>
 			</div>
 

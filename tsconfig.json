@@ -11,5 +11,6 @@
 			"@constants/*": ["./src/constants/*"],
 			"@img/*": ["./public/img/*"]
 		}
-	}
+	},
+	"exclude": ["node_modules"]
 }
