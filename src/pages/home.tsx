@@ -1,6 +1,5 @@
 import groguImage from '@img/grogu.svg'
 import { Link } from '@tanstack/react-router'
-import LinkAnimation from '../components/ui/StarButton'
 export const HomePage: React.FC = () => {
 	return (
 		<div className='flex flex-col items-center justify-center gap-10 md:mt-10 md:flex-row'>
@@ -24,9 +23,9 @@ export const HomePage: React.FC = () => {
 
 				<Link
 					to='/heroes'
-					className='w-fit'
+					className='btn'
 				>
-					<LinkAnimation name='Explore' />
+					Explore
 				</Link>
 			</div>
 

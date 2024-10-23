@@ -1,7 +1,7 @@
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { AnimatePresence, motion } from 'framer-motion'
-import LinkAnimation from '../components/ui/StarButton'
+import LinkAnimation from '../components/ui/LinkAnimation'
 
 export const Route = createRootRoute({
 	component: () => (
@@ -9,13 +9,13 @@ export const Route = createRootRoute({
 			<div className='container my-4 flex gap-8 px-4 md:px-8 lg:px-12'>
 				<Link
 					to='/'
-					className='[&.active]:font-bold [&.active]:text-white'
+					className='[&.active]:font-bold'
 				>
 					<LinkAnimation name='Home' />
 				</Link>
 				<Link
 					to='/heroes'
-					className='[&.active]:font-bold [&.active]:text-white'
+					className='[&.active]:font-bold'
 				>
 					<LinkAnimation name='Heroes' />
 				</Link>
