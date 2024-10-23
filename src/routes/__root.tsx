@@ -1,27 +1,27 @@
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { AnimatePresence, motion } from 'framer-motion'
-import StarButton from '../components/ui/StarButton'
+import LinkAnimation from '../components/ui/StarButton'
 
 export const Route = createRootRoute({
 	component: () => (
 		<>
-			<div className='container flex gap-2 p-2'>
+			<div className='container my-4 flex gap-8 px-4 md:px-8 lg:px-12'>
 				<Link
 					to='/'
-					className='[&.active]:font-bold'
+					className='[&.active]:font-bold [&.active]:text-white'
 				>
-					<StarButton name='Home' />
+					<LinkAnimation name='Home' />
 				</Link>
 				<Link
 					to='/heroes'
-					className='[&.active]:font-bold'
+					className='[&.active]:font-bold [&.active]:text-white'
 				>
-					<StarButton name='Heroes' />
+					<LinkAnimation name='Heroes' />
 				</Link>
 			</div>
 
-			<div className='container'>
+			<div className='container px-4 md:px-8 lg:px-12'>
 				<AnimatePresence mode='wait'>
 					<motion.div
 						key={location.pathname}

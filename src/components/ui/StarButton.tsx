@@ -11,7 +11,7 @@ interface Props {
 	name: string
 }
 
-const StarButton: React.FC<Props> = ({ name }) => {
+const LinkAnimation: React.FC<Props> = ({ name }) => {
 	const [scope, animate] = useAnimate()
 
 	const onButtonClick = () => {
@@ -68,11 +68,10 @@ const StarButton: React.FC<Props> = ({ name }) => {
 
 	return (
 		<div ref={scope}>
-			<button
+			<div
 				onClick={onButtonClick}
-				className='relative rounded-full border-2 border-blue-600 px-6 py-2 text-2xl text-blue-600 transition-colors hover:bg-blue-100'
+				className='relative rounded-full border-2 border-blue-600 px-6 py-2 text-2xl text-blue-600 transition-colors lg:hover:bg-blue-100'
 			>
-				<span className='sr-only'>{name}</span>
 				<span
 					className='block h-8 overflow-hidden'
 					aria-hidden
@@ -106,9 +105,9 @@ const StarButton: React.FC<Props> = ({ name }) => {
 						</svg>
 					))}
 				</span>
-			</button>
+			</div>
 		</div>
 	)
 }
 
-export default StarButton
+export default LinkAnimation

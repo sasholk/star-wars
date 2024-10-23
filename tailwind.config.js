@@ -4,8 +4,13 @@ export default {
 	theme: {
 		container: {
 			center: true,
+			screens: {
+				sm: '100%',
+				lg: '984px',
+				xl: '1240px'
+			}
 		},
-		extend: {},
+		extend: {}
 	},
-	plugins: [],
+	plugins: []
 }
