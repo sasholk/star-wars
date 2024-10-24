@@ -23,11 +23,11 @@
 	}
 
 	.btn {
-		@apply relative w-fit rounded-full border-2 border-blue-600 px-6 py-2 text-2xl text-blue-600 transition-colors;
+		@apply relative w-fit rounded-full border-2 border-cyan-500 px-6 py-2 text-2xl text-cyan-500 transition-colors;
 
 		@media (any-hover: hover) {
 			&:hover {
-				@apply bg-blue-100;
+				@apply bg-cyan-100 text-cyan-600;
 			}
 		}
 	}
