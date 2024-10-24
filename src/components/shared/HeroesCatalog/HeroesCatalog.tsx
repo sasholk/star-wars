@@ -1,22 +1,16 @@
-import { InfiniteData } from '@tanstack/react-query'
+import { useHeroes } from '@/hooks/useHeroes'
 import React from 'react'
 import { Hero } from '../../../types/Hero'
-import { HeroResponse } from '../../../types/HeroResponse'
 import { Card } from '../Card'
 import { CardSkeleton } from '../Card/CardSkeleton'
 
 interface Props {
-	isLoading: boolean
-	data?: InfiniteData<HeroResponse>
-	isFetchingNextPage?: boolean
 	className?: string
 }
 
-export const HeroesCatalog: React.FC<Props> = ({
-	isLoading,
-	data,
-	isFetchingNextPage
-}) => {
+export const HeroesCatalog: React.FC<Props> = () => {
+	const { isLoading, data, isFetchingNextPage } = useHeroes()
+
 	return (
 		<div className='grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-x-4 gap-y-6'>
 			{isLoading &&
