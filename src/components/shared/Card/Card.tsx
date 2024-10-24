@@ -1,6 +1,6 @@
+import { Link } from '@tanstack/react-router'
 import React from 'react'
 import { Hero } from '../../../types/Hero'
-import Button from '../../ui/Button'
 import Item from './Item'
 
 interface Props {
@@ -10,6 +10,13 @@ interface Props {
 export const Card: React.FC<Props> = ({ hero }) => {
 	const { name, gender, birth_year, height, homeworld } = hero
 
+	const heroDetails = [
+		{ label: 'Gender', value: gender },
+		{ label: 'Birth Year', value: birth_year },
+		{ label: 'Homeworld', value: homeworld },
+		{ label: 'Height', value: height }
+	]
+
 	return (
 		<article className='flex flex-col justify-between gap-4 rounded-2xl border border-slate-700 bg-slate-800 p-4 md:p-8'>
 			<header>
@@ -18,29 +25,23 @@ export const Card: React.FC<Props> = ({ hero }) => {
 
 			<main>
 				<ul className='flex flex-col gap-4'>
-					<Item
-						label='gender'
-						info={`${gender}`}
-					/>
-					<Item
-						label='birth year'
-						info={`${birth_year}`}
-					/>
-					<Item
-						label='homeworld'
-						info={`${homeworld}`}
-					/>
-					<Item
-						label='height'
-						info={`${height}`}
-					/>
+					{heroDetails.map(({ label, value }) => (
+						<Item
+							key={label}
+							label={label}
+							info={value}
+						/>
+					))}
 				</ul>
 			</main>
 
 			<footer className='flex justify-center'>
-				<Button className='w-full text-nowrap py-1'>
+				<Link
+					to={`/heroes/${hero.id}`}
+					className='btn w-full text-nowrap py-1 text-center'
+				>
 					Check <span className='hidden md:inline'>more</span>
-				</Button>
+				</Link>
 			</footer>
 		</article>
 	)

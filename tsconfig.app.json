@@ -23,7 +23,6 @@
 		/* Aliases */
 		"paths": {
 			"@/*": ["./src/*"],
-			"@constants/*": ["./src/constants/*"],
 			"@img/*": ["./public/img/*"]
 		}
 	},

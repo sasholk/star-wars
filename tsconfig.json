@@ -8,7 +8,6 @@
 		// here I creating alliases for paths
 		"paths": {
 			"@/*": ["./src/*"],
-			"@constants/*": ["./src/constants/*"],
 			"@img/*": ["./public/img/*"]
 		}
 	},
