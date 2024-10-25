@@ -14,7 +14,7 @@ export const Card: React.FC<Props> = ({ hero }) => {
 		{ label: 'Gender', value: gender },
 		{ label: 'Birth Year', value: birth_year },
 		{ label: 'Homeworld', value: homeworld },
-		{ label: 'Height', value: height }
+		{ label: 'Height', value: `${height} cm` }
 	]
 
 	return (

@@ -16,14 +16,13 @@ export const HeroesCatalog: React.FC<Props> = () => {
 			{isLoading &&
 				[...Array(8)].map((_, index) => <CardSkeleton key={index} />)}
 
-			{data?.pages.map(page =>
-				page.results.map((hero: Hero) => (
+			{!!data?.length &&
+				data.map((hero: Hero) => (
 					<Card
 						key={hero.id}
 						hero={hero}
 					/>
-				))
-			)}
+				))}
 
 			{isFetchingNextPage &&
 				[...Array(4)].map((_, index) => <CardSkeleton key={index} />)}
