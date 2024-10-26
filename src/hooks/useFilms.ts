@@ -1,5 +1,6 @@
-import filmService from '@/api/film.service'
 import { useQuery } from '@tanstack/react-query'
+
+import filmService from '@/api/film.service'
 
 export function useFilms(id: string) {
 	return useQuery({

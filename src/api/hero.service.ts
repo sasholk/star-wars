@@ -1,5 +1,6 @@
 import { Hero } from '@/types/Hero'
 import { HeroResponse } from '@/types/HeroResponse'
+
 import apiClient from './api.client'
 
 const ENDPOINT = '/people'

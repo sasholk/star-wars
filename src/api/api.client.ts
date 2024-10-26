@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-	baseURL: 'https://sw-api.starnavi.io'
+	baseURL: import.meta.env.VITE_API_BASE_URL
 })
 
 export default apiClient

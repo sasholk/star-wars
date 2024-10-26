@@ -1,4 +1,4 @@
-export interface Ship {
+export interface Starship {
 	id: number
 	name: string
 	model: string

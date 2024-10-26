@@ -1,7 +1,10 @@
-import Image from '@/components/ui/Image'
 import { Handle, Position } from '@xyflow/react'
 import { RocketIcon } from 'lucide-react'
 import { memo } from 'react'
+
+import Image from '@/components/ui/Image'
+
+import { IMAGE_BASE_URL } from '@/constants/url.constants'
 
 interface Props {
 	data: {
@@ -13,10 +16,10 @@ interface Props {
 
 const CustomNode: React.FC<Props> = ({ data }) => {
 	const { id, name, category } = data
-	const srcLink = `https://starwars-visualguide.com/assets/img/${category}s/${id}.jpg`
+	const srcLink = `${IMAGE_BASE_URL}/${category}s/${id}.jpg`
 
 	return (
-		<div className='w-60 rounded-md border-2 border-stone-400 bg-white px-4 py-2 shadow-md'>
+		<div className='w-60 rounded-md border-2 border-cyan-400 bg-gradient-to-r from-teal-400 to-cyan-500 px-4 py-2 shadow-md'>
 			<div className='flex'>
 				<div className='flex h-12 w-12 items-center justify-center'>
 					{category === 'starship' ? (

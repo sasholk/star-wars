@@ -1,5 +1,6 @@
 import Error from '@/components/shared/Error/Error'
 import { HeroesCatalog } from '@/components/shared/HeroesCatalog'
+
 import { useHeroes } from '@/hooks/useHeroes'
 import useInfiniteScroll from '@/hooks/useInfiniteScroll'
 
@@ -11,12 +12,7 @@ export const HeroesPage: React.FC = () => {
 	const loadMoreRef = useInfiniteScroll(hasNextPage, fetchNextPage)
 
 	if (error) {
-		return (
-			<Error
-				fetchNextPage={fetchNextPage}
-				error={error}
-			/>
-		)
+		return <Error error={error} />
 	}
 
 	// Rendering the UI

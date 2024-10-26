@@ -10,12 +10,12 @@ export default defineConfig({
 		alias: [
 			{
 				find: '@',
-				replacement: path.resolve(__dirname, './src'), // alias for src
+				replacement: path.resolve(__dirname, './src') // alias for src
 			},
 			{
 				find: '@img',
-				replacement: path.resolve(__dirname, './public/img'), // alias for public/img
-			},
-		],
-	},
+				replacement: path.resolve(__dirname, './public/img') // alias for public/img
+			}
+		]
+	}
 })

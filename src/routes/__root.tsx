@@ -1,6 +1,8 @@
-import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+import { Link, Outlet, createRootRoute } from '@tanstack/react-router'
 import { AnimatePresence, motion } from 'framer-motion'
+
+import { rootVariants } from '@/constants/animationVariants.constants'
+
 import LinkAnimation from '../components/ui/LinkAnimation'
 
 export const Route = createRootRoute({
@@ -28,17 +30,12 @@ export const Route = createRootRoute({
 						initial='initial'
 						animate='animate'
 						exit='exit'
-						variants={{
-							initial: { opacity: 0, x: -50 },
-							animate: { opacity: 1, x: 0 },
-							exit: { opacity: 0, x: 50 }
-						}}
+						variants={rootVariants}
 						transition={{ duration: 0.3 }}
 					>
 						<Outlet />
 					</motion.div>
 				</AnimatePresence>
-				<TanStackRouterDevtools />
 			</div>
 		</>
 	)

@@ -1,5 +1,7 @@
-import groguImage from '@img/grogu.svg'
 import { Link } from '@tanstack/react-router'
+
+import groguImage from '@img/grogu.svg'
+
 export const HomePage: React.FC = () => {
 	return (
 		<div className='flex flex-col items-center justify-center gap-10 md:mt-10 md:flex-row'>

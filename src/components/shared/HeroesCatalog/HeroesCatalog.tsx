@@ -1,5 +1,7 @@
-import { useHeroes } from '@/hooks/useHeroes'
 import React from 'react'
+
+import { useHeroes } from '@/hooks/useHeroes'
+
 import { Hero } from '../../../types/Hero'
 import { Card } from '../Card'
 import { CardSkeleton } from '../Card/CardSkeleton'

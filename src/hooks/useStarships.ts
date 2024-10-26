@@ -1,5 +1,6 @@
-import starshipService from '@/api/starship.service'
 import { useQuery } from '@tanstack/react-query'
+
+import starshipService from '@/api/starship.service'
 
 export function useStarships(id: string) {
 	return useQuery({

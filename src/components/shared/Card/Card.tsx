@@ -1,6 +1,9 @@
 import { Link } from '@tanstack/react-router'
 import React from 'react'
-import { Hero } from '../../../types/Hero'
+
+import { Hero } from '@/types/Hero'
+
+import styles from '@/styles/gradient.module.scss'
 import Item from './Item'
 
 interface Props {
@@ -18,7 +21,9 @@ export const Card: React.FC<Props> = ({ hero }) => {
 	]
 
 	return (
-		<article className='flex flex-col justify-between gap-4 rounded-2xl border border-slate-700 bg-slate-800 p-4 md:p-8'>
+		<article
+			className={`${styles.gradient} ${styles.noBlur} flex flex-col justify-between gap-4 rounded-2xl border border-slate-700 bg-slate-800 p-4 md:p-8`}
+		>
 			<header>
 				<h3 className='text-2xl font-bold'>{name}</h3>
 			</header>

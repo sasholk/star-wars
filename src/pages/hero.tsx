@@ -1,29 +1,36 @@
+import { useParams } from '@tanstack/react-router'
+import React from 'react'
+
 import { BackButton } from '@/components/shared/BackButton'
 import { Flow } from '@/components/shared/Flow'
 import { Loader } from '@/components/ui/Loader'
+
+import { STATUS_ERROR, STATUS_PENDING } from '@/constants/status.constants'
+
 import { useFilms } from '@/hooks/useFilms'
 import { useHero } from '@/hooks/useHero'
 import { useStarships } from '@/hooks/useStarships'
+
 import { generateEdges } from '@/utils/generateEdges'
 import { generateNodes } from '@/utils/generateNodes'
-import { useParams } from '@tanstack/react-router'
-import React from 'react'
 
 export const HeroPage: React.FC = () => {
 	const heroId = useParams({
 		from: '/heroes/$heroId',
 		select: params => params.heroId
 	})
+
 	const { data: hero, status: heroStatus } = useHero(heroId)
 	const { data: films, status: filmsStatus } = useFilms(heroId)
 	const { data: ships, status: shipsStatus } = useStarships(heroId)
 
-	if (
-		heroStatus === 'pending' ||
-		filmsStatus === 'pending' ||
-		shipsStatus === 'pending'
+	const isLoading = [heroStatus, filmsStatus, shipsStatus].includes(
+		STATUS_PENDING
 	)
-		return <Loader />
+	const isError = [heroStatus, filmsStatus, shipsStatus].includes(STATUS_ERROR)
+
+	if (isLoading) return <Loader />
+	if (isError) return <div>Error loading data, please try again</div>
 
 	const nodes = generateNodes(hero!, films, ships)
 	const edges = generateEdges(hero!, films, ships)

@@ -1,29 +1,30 @@
 import { Controls, ReactFlow } from '@xyflow/react'
+import '@xyflow/react/dist/base.css'
 import React from 'react'
 
-import '@xyflow/react/dist/base.css'
-
 import { Edge, Node } from '@/types/Flow'
-import CustomNode from './CustomNode'
 
-const nodeTypes = {
-	custom: CustomNode
-}
+import styles from '@/styles/gradient.module.scss'
+import CustomNode from './CustomNode'
 
 interface Props {
 	nodes: Node[]
 	edges: Edge[]
 }
 
+const nodeTypes = {
+	custom: CustomNode
+}
+
 export const Flow: React.FC<Props> = ({ nodes, edges }) => {
 	return (
-		<div className='mb-14 h-[80vh]'>
+		<div className={`${styles.gradient} mb-14`}>
 			<ReactFlow
 				defaultNodes={nodes}
 				defaultEdges={edges}
 				nodeTypes={nodeTypes}
 				fitView
-				className='rounded-lg !bg-slate-400/20'
+				className={`!h-[80vh] rounded-lg`}
 			>
 				<Controls />
 			</ReactFlow>

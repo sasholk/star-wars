@@ -1,7 +1,9 @@
+import { Position } from '@xyflow/react'
+
 import { Film } from '@/types/Film'
 import { Hero } from '@/types/Hero'
-import { Ship } from '@/types/Ship'
-import { Position } from '@xyflow/react'
+import { Starship } from '@/types/Ship'
+
 import { getId } from './getId'
 
 const atributes = {
@@ -10,7 +12,11 @@ const atributes = {
 	sourcePosition: Position.Bottom
 }
 
-export function generateNodes(hero: Hero, films: Film[], starships: Ship[]) {
+export function generateNodes(
+	hero: Hero,
+	films: Film[],
+	starships: Starship[]
+) {
 	// Define initial positions
 	const heroPosition = { x: 0, y: 0 }
 	const filmSpacingX = 250 // Horizontal space between film nodes

@@ -1,5 +1,6 @@
-import heroService from '@/api/hero.service'
 import { useInfiniteQuery } from '@tanstack/react-query'
+
+import heroService from '@/api/hero.service'
 
 export const useHeroes = () => {
 	return useInfiniteQuery({

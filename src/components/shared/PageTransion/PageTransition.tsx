@@ -1,6 +1,6 @@
-import { motion } from "framer-motion"
-import { pageTransition, pageVariants } from './constants'
+import { motion } from 'framer-motion'
 
+import { pageTransition, pageVariants } from './constants'
 
 interface Props {
 	children: React.ReactNode
