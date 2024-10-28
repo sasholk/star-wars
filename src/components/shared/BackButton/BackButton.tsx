@@ -1,24 +1,27 @@
+import Button from '@/components/ui/Button'
 import { useRouter } from '@tanstack/react-router'
 import { ArrowLeft } from 'lucide-react'
 import React from 'react'
 
-import Button from '@/components/ui/Button'
-
 interface Props {
 	className?: string
+	clearSearch?: () => void // Add a prop to clear search
 }
 
-export const BackButton: React.FC<Props> = ({ className }) => {
+export const BackButton: React.FC<Props> = ({ className, clearSearch }) => {
 	const router = useRouter()
 
 	const handleClick = () => {
-		router.history.back()
+		if (clearSearch) return clearSearch() // Clear the search state
+
+		router.history.back() // Navigate back
 	}
 
 	return (
 		<Button
 			onClick={handleClick}
-			className={`${className} border-slate-600 bg-slate-700 p-2 text-slate-400 hover:bg-slate-600 hover:text-slate-300`}
+			variant='secondary'
+			className={`btn px-2 py-2 ${className}`}
 		>
 			<ArrowLeft />
 		</Button>

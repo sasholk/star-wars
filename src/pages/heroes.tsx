@@ -1,26 +1,53 @@
+import { BackButton } from '@/components/shared/BackButton'
 import Error from '@/components/shared/Error/Error'
 import { HeroesCatalog } from '@/components/shared/HeroesCatalog'
-
+import { SearchBar } from '@/components/shared/SearchBar/SearchBar'
 import { useHeroes } from '@/hooks/useHeroes'
 import useInfiniteScroll from '@/hooks/useInfiniteScroll'
+import { useState } from 'react'
 
-// Main component for rendering the Heroes Page
 export const HeroesPage: React.FC = () => {
-	const { error, fetchNextPage, hasNextPage } = useHeroes()
+	const [searchQuery, setSearchQuery] = useState('')
+  const [clearInput, setClearInput] = useState(false)
 
-	// Ref to track the load more element, which will trigger data fetching when in view
+	// Fetch heroes with the current search query
+	const { data, error, fetchNextPage, hasNextPage, status } =
+		useHeroes(searchQuery)
+
+	// Ref for infinite scroll
 	const loadMoreRef = useInfiniteScroll(hasNextPage, fetchNextPage)
 
+  // Function to clear the search query and input
+  const clearSearch = () => {
+    setSearchQuery('')
+    setClearInput(true) // Set clearInput to true to reset the input field
+  }
 	if (error) {
 		return <Error error={error} />
 	}
 
-	// Rendering the UI
 	return (
 		<div className='mb-20 md:mt-10'>
-			<h1 className='h1 mb-10'>Heroes collection</h1>
+			<div className='mb-10 flex flex-col items-center justify-between gap-6 lg:flex-row'>
+				<h1 className='h1'>Heroes collection</h1>
 
-			<HeroesCatalog />
+				<SearchBar onSearch={setSearchQuery} clearInput={clearInput} />
+			</div>
+
+			{!!searchQuery.length && (
+				<BackButton
+					clearSearch={clearSearch}
+					className='mb-4'
+				/>
+			)}
+
+			{status === 'success' && data.length === 0 && (
+				<div className='col-span-full text-center text-red-500'>
+					WOOOPS! There are no heroes
+				</div>
+			)}
+
+			<HeroesCatalog data={data} />
 
 			<div
 				ref={loadMoreRef}

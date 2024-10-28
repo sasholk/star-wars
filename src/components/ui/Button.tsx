@@ -1,6 +1,8 @@
 import { forwardRef } from 'react'
 
-interface ButtonOptions {}
+interface ButtonOptions {
+	variant?: 'primary' | 'secondary' | 'outlined'
+}
 
 type Ref = HTMLButtonElement
 
@@ -11,11 +13,18 @@ export type ButtonProps = React.DetailedHTMLProps<
 	ButtonOptions
 
 const Button = forwardRef<Ref, ButtonProps>((props, ref) => {
-	const { type = 'button', children, className, ...rest } = props
+	const {
+		type = 'button',
+		children,
+		className,
+		variant = 'outlined',
+		...rest
+	} = props
+
 	return (
 		<button
 			ref={ref}
-			className={`btn ${className}`}
+			className={`btn ${variant} ${className}`}
 			{...rest}
 		>
 			{children}

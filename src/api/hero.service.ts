@@ -1,14 +1,13 @@
+import apiClient from './api.client'
 import { Hero } from '@/types/Hero'
 import { HeroResponse } from '@/types/HeroResponse'
-
-import apiClient from './api.client'
 
 const ENDPOINT = '/people'
 
 class HeroService {
-	async getAll(pageParam: number) {
+	async getAll(pageParam: number, searchQuery: string = '') {
 		const { data } = await apiClient.get<HeroResponse>(
-			`${ENDPOINT}?page=${pageParam}`
+			`${ENDPOINT}?page=${pageParam}&search=${searchQuery.length ? searchQuery : ''}`
 		)
 		return {
 			results: data.results ?? [], // Fallback to empty array if results are undefined

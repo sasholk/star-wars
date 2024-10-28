@@ -1,11 +1,11 @@
+import heroService from '@/api/hero.service'
 import { useInfiniteQuery } from '@tanstack/react-query'
 
-import heroService from '@/api/hero.service'
-
-export const useHeroes = () => {
+export const useHeroes = (searchQuery: string = '') => {
 	return useInfiniteQuery({
-		queryKey: ['heroes'], // Unique key for caching and refetching
-		queryFn: async ({ pageParam }) => heroService.getAll(pageParam),
+		queryKey: ['heroes', searchQuery], // Include searchQuery in the key
+		queryFn: async ({ pageParam = 1 }) =>
+			heroService.getAll(pageParam, searchQuery), // Pass searchQuery to getAll
 		select: data => data.pages.flatMap(page => page.results),
 		initialPageParam: 1,
 		getNextPageParam: lastPage => lastPage.nextPage

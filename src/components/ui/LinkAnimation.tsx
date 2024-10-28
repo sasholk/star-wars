@@ -1,8 +1,7 @@
+import { randomNumberBetween } from '../../utils/randomNumberBetween'
 import { animate, stagger, useAnimate } from 'framer-motion'
 import { Sparkle } from 'lucide-react'
 import React from 'react'
-
-import { randomNumberBetween } from '../../utils/randomNumberBetween'
 
 // Define the type for animation sequences
 type AnimationSequence = Parameters<typeof animate>[0]
@@ -77,12 +76,10 @@ export const LinkAnimation: React.FC<Props> = ({ name }) => {
 
 	return (
 		<div ref={scope}>
-			{/* Clickable button with animation */}
 			<div
 				onClick={handleClick}
-				className='btn'
+				className='btn relative outlined'
 			>
-				{/* Container for animated letters */}
 				<span
 					className='block h-8 overflow-hidden'
 					aria-hidden
@@ -98,7 +95,6 @@ export const LinkAnimation: React.FC<Props> = ({ name }) => {
 					))}
 				</span>
 
-				{/* Container for sparkles */}
 				<span
 					aria-hidden
 					className='pointer-events-none absolute inset-0 -z-10 block'

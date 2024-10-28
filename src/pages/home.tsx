@@ -1,6 +1,5 @@
-import { Link } from '@tanstack/react-router'
-
 import groguImage from '@img/grogu.svg'
+import { Link } from '@tanstack/react-router'
 
 export const HomePage: React.FC = () => {
 	return (
@@ -29,7 +28,7 @@ export const HomePage: React.FC = () => {
 
 				<Link
 					to='/heroes'
-					className='btn'
+					className='btn outlined'
 				>
 					Explore
 				</Link>

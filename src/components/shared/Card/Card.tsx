@@ -1,10 +1,8 @@
+import Item from './Item'
+import styles from '@/styles/gradient.module.scss'
+import { Hero } from '@/types/Hero'
 import { Link } from '@tanstack/react-router'
 import React from 'react'
-
-import { Hero } from '@/types/Hero'
-
-import styles from '@/styles/gradient.module.scss'
-import Item from './Item'
 
 interface Props {
 	hero: Hero
@@ -43,7 +41,7 @@ export const Card: React.FC<Props> = ({ hero }) => {
 			<footer className='flex justify-center'>
 				<Link
 					to={`/heroes/${hero.id}`}
-					className='btn w-full text-nowrap py-1 text-center'
+					className='btn primary w-full text-nowrap py-1 text-center'
 				>
 					Check <span className='hidden md:inline'>more</span>
 				</Link>
