@@ -8,6 +8,18 @@ interface Props {
 	hero: Hero
 }
 
+/**
+ * A card component that displays detailed information about a hero.
+ *
+ * @component
+ * @param {Props} props - The props for the Card component.
+ * @param {Hero} props.hero - The hero data to be displayed.
+ *
+ * @returns {React.ReactElement} The rendered card component.
+ *
+ * @example
+ * <Card hero={hero} />
+ */
 export const Card: React.FC<Props> = ({ hero }) => {
 	const { name, gender, birth_year, height, homeworld } = hero
 

@@ -1,6 +1,22 @@
 import groguImage from '@img/grogu.svg'
 import { Link } from '@tanstack/react-router'
 
+/**
+ * The HomePage component is the main entry point of the Star Explorer app.
+ * It welcomes the user, explains the purpose of the app, and provides a link
+ * to the Heroes page.
+ *
+ * The component renders a responsive UI with a div containing a heading,
+ * a paragraph with a call to action, and a link to the Heroes page.
+ * The heading displays the Star Explorer logo and the tagline.
+ * The paragraph provides a brief description of the app and what it offers.
+ * The link is a call to action to explore the Star Wars galaxy.
+ *
+ * The component also renders an image of Grogu (Baby Yoda) from the Disney+
+ * series The Mandalorian.
+ *
+ * The component is optimized for desktop and mobile devices.
+ */
 export const HomePage: React.FC = () => {
 	return (
 		<div className='flex flex-col items-center justify-center gap-10 md:mt-10 md:flex-row'>

@@ -12,6 +12,19 @@ const atributes = {
 	sourcePosition: Position.Bottom
 }
 
+/**
+ * Generates an array of nodes for the flow graph.
+ *
+ * Nodes are generated as follows:
+ * - A hero node is added at the origin.
+ * - Each film is added horizontally spaced from each other.
+ * - Each starship is added vertically below its corresponding film.
+ *
+ * @param hero - The hero to generate nodes for.
+ * @param films - The films the hero appears in.
+ * @param starships - The starships to connect to the films.
+ * @returns An array of nodes.
+ */
 export function generateNodes(
 	hero: Hero,
 	films: Film[],

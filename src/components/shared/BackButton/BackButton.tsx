@@ -11,10 +11,15 @@ interface Props {
 export const BackButton: React.FC<Props> = ({ className, clearSearch }) => {
 	const router = useRouter()
 
+	/**
+	 * Handle click event on the back button.
+	 * If `clearSearch` prop is provided, call it to clear the search state.
+	 * Otherwise, navigate back using the router.
+	 */
 	const handleClick = () => {
-		if (clearSearch) return clearSearch() // Clear the search state
+		if (clearSearch) return clearSearch()
 
-		router.history.back() // Navigate back
+		router.history.back()
 	}
 
 	return (

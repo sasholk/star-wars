@@ -6,6 +6,28 @@ import { useHeroes } from '@/hooks/useHeroes'
 import useInfiniteScroll from '@/hooks/useInfiniteScroll'
 import { useState } from 'react'
 
+/**
+ * The Heroes page component.
+ *
+ * This component is the root of the '/heroes' route and is
+ * responsible for rendering a list of heroes based on the search query.
+ *
+ * It contains a search bar that allows the user to search for heroes by name.
+ * The search query is stored in the component's state and passed to the
+ * `useHeroes` hook to fetch the heroes from the API.
+ *
+ * The component also renders a list of heroes, which is fetched using the
+ * `useHeroes` hook. If the search query is empty, it will render a list of all
+ * heroes. If there are no heroes that match the search query, it will display
+ * a message indicating that there are no heroes.
+ *
+ * The component also renders a "Back" button that allows the user to clear the
+ * search query and input.
+ *
+ * The component uses the `useInfiniteScroll` hook to implement infinite
+ * scrolling behavior. It will fetch the next page of heroes when the user
+ * scrolls to the bottom of the list.
+ */
 export const HeroesPage: React.FC = () => {
 	const [searchQuery, setSearchQuery] = useState('')
   const [clearInput, setClearInput] = useState(false)

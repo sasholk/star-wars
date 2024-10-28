@@ -1,10 +1,8 @@
+import Image from '@/components/ui/Image'
+import { IMAGE_BASE_URL } from '@/constants/url.constants'
 import { Handle, Position } from '@xyflow/react'
 import { RocketIcon } from 'lucide-react'
 import { memo } from 'react'
-
-import Image from '@/components/ui/Image'
-
-import { IMAGE_BASE_URL } from '@/constants/url.constants'
 
 interface Props {
 	data: {
@@ -14,6 +12,17 @@ interface Props {
 	}
 }
 
+/**
+ * A custom node component for the flow graph.
+ *
+ * This component renders a div with a background gradient and rounded corners.
+ * It contains an image of the hero or starship, and its name and category.
+ * It also renders source and target handles of the node.
+ *
+ * @param {{ id: number, name: string, category: string }} data - The data of the node.
+ *
+ * @returns {React.ReactElement} The rendered node component.
+ */
 const CustomNode: React.FC<Props> = ({ data }) => {
 	const { id, name, category } = data
 	const srcLink = `${IMAGE_BASE_URL}/${category}s/${id}.jpg`

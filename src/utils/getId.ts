@@ -3,9 +3,7 @@ export const getId = (url: string) => {
 	const match = url.match(/\d+/)
 	let id = ''
 
-	if (match) {
-		id = match[0].toString()
-	}
+	if (match) id = match[0].toString()
 
 	return id
 }

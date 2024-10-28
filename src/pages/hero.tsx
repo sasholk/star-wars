@@ -14,6 +14,20 @@ import { useStarships } from '@/hooks/useStarships'
 import { generateEdges } from '@/utils/generateEdges'
 import { generateNodes } from '@/utils/generateNodes'
 
+/**
+ * The HeroPage component renders a hero's details page.
+ *
+ * @description
+ * This page is rendered when the user navigates to `/heroes/:heroId`.
+ * It fetches the hero, films, and starships data using the `useHero`,
+ * `useFilms`, and `useStarships` hooks respectively, and renders a
+ * `Flow` component with the generated nodes and edges.
+ *
+ * If the data is still loading, it displays a `Loader` component.
+ * If there was an error fetching the data, it displays an error message.
+ *
+ * @returns {React.ReactElement} The rendered hero details page.
+ */
 export const HeroPage: React.FC = () => {
 	const heroId = useParams({
 		from: '/heroes/$heroId',

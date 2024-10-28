@@ -8,6 +8,17 @@ interface Props {
 	className?: string
 }
 
+/**
+ * A search bar component that fires a callback with the search query when the
+ * form is submitted.
+ *
+ * @param {{ onSearch: (query: string) => void, className?: string, clearInput?: boolean }} props
+ * @prop {function} onSearch - The callback to call when the form is submitted
+ * @prop {string} [className] - Additional CSS classes to apply to the form
+ * @prop {boolean} [clearInput] - If true, the input field will be cleared when
+ *   `clearInput` is set to true
+ * @returns {React.ReactElement} The search bar component
+ */
 export const SearchBar: React.FC<Props> = ({
 	onSearch,
 	className,
@@ -20,7 +31,6 @@ export const SearchBar: React.FC<Props> = ({
 		onSearch(inputValue)
 	}
 
-	// Clear input when clearInput is true
 	useEffect(() => {
 		if (clearInput) setInputValue('')
 	}, [clearInput])
@@ -50,8 +60,8 @@ export const SearchBar: React.FC<Props> = ({
 					id='default-search'
 					value={inputValue}
 					onChange={e => setInputValue(e.target.value)}
-					className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-4 ps-10 text-sm text-gray-900 focus:border-cyan-500 focus:ring-cyan-500'
-					placeholder='Example Chewbacca...'
+					className='block w-full rounded-lg border border-slate-700 bg-slate-800 p-4 ps-10 text-sm text-gray-200 focus:border-cyan-500 focus:ring-cyan-500'
+					placeholder='write a hero name'
 					required
 				/>
 

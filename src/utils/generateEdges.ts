@@ -4,6 +4,19 @@ import { Starship } from '@/types/Ship'
 
 import { getId } from './getId'
 
+/**
+ * Generates an array of edges to be used in the flow graph.
+ *
+ * Edges are generated as follows:
+ *
+ * - Connects each hero to each film they appear in.
+ * - Connects each film to its starships, even if the starship already exists.
+ *
+ * @param hero - The hero to generate edges for.
+ * @param films - The films the hero appears in.
+ * @param starships - The starships to connect to the films.
+ * @returns An array of edges.
+ */
 export const generateEdges = (
 	hero: Hero,
 	films: Film[],
