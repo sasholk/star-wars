@@ -1,13 +1,21 @@
 # ⭐ Star Wars Project
 
-🔗 **Links:**
+## 📑 Table of Contents
+1. [Links](#-links)
+2. [Description](#-description)
+3. [Used Technologies](#-used-technologies)
+4. [Quick Start](#-quick-start)
+5. [Run Tests](#-run-tests)
+6. [Additional Information](#-additional-information)
+
+---
+
+### 🔗 **Links:**
 
 - **Live Preview:** [Star Wars App](https://671fb2752fc4ed641576e42f--sasholk-star-wars.netlify.app/)
 - **API Link:** [Star Wars API](https://sw-api.starnavi.io/)
 
-🎨 **Design:** No design link available.
-
-✨ **Description**
+### ✨ **Description**
 
 - This is a Star Wars-themed application built using React, Vite, TypeScript, Tailwind CSS, and Module SCSS.
 - The project features dynamic animations implemented with Framer Motion for a smooth user experience.
@@ -15,7 +23,7 @@
 - Integrated React Flow to create and display graphs with custom nodes, generating nodes and edges from the API.
 - Jest is used for writing unit tests, ensuring component reliability and robustness.
 
-🛠️ **Used Technologies:**
+### 🛠️ **Used Technologies:**
 
 - React
 - Vite
@@ -27,7 +35,7 @@
 - React Flow
 - Jest
 
-⚡ **Quick Start**
+### ⚡ **Quick Start**
 
 1. **Clone the repository:**
     
@@ -51,7 +59,7 @@ npm run dev
 4. **Open** [http://localhost:5173/](http://localhost:5173/) **in your browser** to view the app.
     
 
-🧪 **Run Tests:**
+### 🧪 **Run Tests:**
 
 - To run the test suite, use the command:
     
@@ -59,8 +67,7 @@ npm run dev
 npm run test
 ```
     
-
-💬 **Additional Information**
+### 💬 **Additional Information**
 
 - The app supports animations for enhanced interactivity.
 - Custom components are modular and reusable, making the codebase scalable and maintainable.
