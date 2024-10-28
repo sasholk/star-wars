@@ -1,11 +1,20 @@
 # ⭐ Star Wars Project
 
-🔗 **Links:**
+## 📑 Table of Contents
+1. [Links](#-links)
+2. [Design](#-design)
+3. [Description](#-description)
+4. [Used Technologies](#%EF%B8%8F-used-technologies)
+5. [Quick Start](#-quick-start)
+6. [Run Tests](#-run-tests)
+7. [Additional Information](#additional-information)
+
+---
+
+# 🔗 **Links:**
 
 - **Live Preview:** [Star Wars App](https://671fb2752fc4ed641576e42f--sasholk-star-wars.netlify.app/)
 - **API Link:** [Star Wars API](https://sw-api.starnavi.io/)
-
-🎨 **Design:** No design link available.
 
 ✨ **Description**
 
@@ -59,8 +68,7 @@ npm run dev
 npm run test
 ```
     
-
-💬 **Additional Information**
+### Additional Information
 
 - The app supports animations for enhanced interactivity.
 - Custom components are modular and reusable, making the codebase scalable and maintainable.
