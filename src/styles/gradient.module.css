@@ -1,0 +1,38 @@
+@property --angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+.gradient {
+  position: relative;
+  background-color: rgb(27, 30, 32);
+  border-radius: 8px;
+}
+.gradient::after, .gradient::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: unset;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  --angle: 0deg;
+  background-image: conic-gradient(from var(--angle), cyan, blue, cyan);
+  animation: autoRotate 8s linear infinite;
+}
+.gradient::after {
+  filter: blur(60px);
+}
+.gradient.noBlur::after {
+  filter: none;
+}
+
+@keyframes autoRotate {
+  to {
+    --angle: 360deg;
+  }
+}/*# sourceMappingURL=gradient.module.css.map */
