@@ -30,7 +30,7 @@ import { useState } from 'react'
  */
 export const HeroesPage: React.FC = () => {
 	const [searchQuery, setSearchQuery] = useState('')
-  const [clearInput, setClearInput] = useState(false)
+	const [clearInput, setClearInput] = useState(false)
 
 	// Fetch heroes with the current search query
 	const { data, error, fetchNextPage, hasNextPage, status } =
@@ -39,11 +39,14 @@ export const HeroesPage: React.FC = () => {
 	// Ref for infinite scroll
 	const loadMoreRef = useInfiniteScroll(hasNextPage, fetchNextPage)
 
-  // Function to clear the search query and input
-  const clearSearch = () => {
-    setSearchQuery('')
-    setClearInput(true) // Set clearInput to true to reset the input field
-  }
+	// Function to clear the search query and input
+	const clearSearch = () => {
+		setSearchQuery('')
+		setClearInput(true) // Set clearInput to true to reset the input field
+
+		// Reset clearInput after a short delay to allow SearchBar to detect change
+		setTimeout(() => setClearInput(false), 100)
+	}
 	if (error) {
 		return <Error error={error} />
 	}
@@ -53,7 +56,10 @@ export const HeroesPage: React.FC = () => {
 			<div className='mb-10 flex flex-col items-center justify-between gap-6 lg:flex-row'>
 				<h1 className='h1'>Heroes collection</h1>
 
-				<SearchBar onSearch={setSearchQuery} clearInput={clearInput} />
+				<SearchBar
+					onSearch={setSearchQuery}
+					clearInput={clearInput}
+				/>
 			</div>
 
 			{!!searchQuery.length && (
