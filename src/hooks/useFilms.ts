@@ -1,6 +1,5 @@
-import { useQuery } from '@tanstack/react-query'
-
 import filmService from '@/api/film.service'
+import { useQuery } from '@tanstack/react-query'
 
 /**
  * Fetches a list of films for a given hero by heroId.
