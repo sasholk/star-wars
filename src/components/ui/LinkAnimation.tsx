@@ -78,7 +78,7 @@ export const LinkAnimation: React.FC<Props> = ({ name }) => {
 		<div ref={scope}>
 			<div
 				onClick={handleClick}
-				className='btn relative outlined'
+				className='btn outlined relative'
 			>
 				<span
 					className='block h-8 overflow-hidden'
@@ -101,6 +101,7 @@ export const LinkAnimation: React.FC<Props> = ({ name }) => {
 				>
 					{Array.from({ length: 20 }).map((_, index) => (
 						<Sparkle
+							key={index}
 							className={`absolute left-1/2 top-1/2 opacity-0 sparkle-${index}`}
 							color='cyan'
 							fill='cyan'

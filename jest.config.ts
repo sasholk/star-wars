@@ -4,8 +4,14 @@ export default {
 		'^.+\\.tsx?$': 'ts-jest'
 	},
 
+	globals: {
+		'ts-jest': {
+			diagnostics: false
+		}
+	},
+
 	moduleNameMapper: {
-		'\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+		'^.+\\.(css|less|scss)$': 'identity-obj-proxy',
 		'^.+\\.svg$': 'jest-transformer-svg',
 		'^@/(.*)$': '<rootDir>/src/$1'
 	},

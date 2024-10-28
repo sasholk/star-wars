@@ -2,9 +2,8 @@ import { Controls, ReactFlow } from '@xyflow/react'
 import '@xyflow/react/dist/base.css'
 import React from 'react'
 
-import { Edge, Node } from '@/types/Flow'
-
 import styles from '@/styles/gradient.module.scss'
+import { Edge, Node } from '@/types/Flow'
 import CustomNode from './CustomNode'
 
 interface Props {

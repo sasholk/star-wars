@@ -21,10 +21,11 @@
 		"noFallthroughCasesInSwitch": true,
 
 		/* Aliases */
+		"baseUrl": "./",
 		"paths": {
-			"@/*": ["./src/*"],
-			"@img/*": ["./public/img/*"]
+			"@/*": ["src/*"],
+			"@img/*": ["public/img/*"]
 		}
 	},
-	"include": ["src", "vite-env.d.ts", "./jest.setup.ts"]
+	"include": ["src", "src/types", "vite-env.d.ts", "./jest.setup.ts"]
 }

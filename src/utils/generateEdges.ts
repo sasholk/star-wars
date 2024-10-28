@@ -1,16 +1,14 @@
+import { getId } from './getId'
 import { Film } from '@/types/Film'
 import { Hero } from '@/types/Hero'
 import { Starship } from '@/types/Ship'
 
-import { getId } from './getId'
-
 /**
- * Generates an array of edges to be used in the flow graph.
+ * Generates an array of edges for the flow graph.
  *
  * Edges are generated as follows:
- *
- * - Connects each hero to each film they appear in.
- * - Connects each film to its starships, even if the starship already exists.
+ * - A hero node is connected to each film node.
+ * - Each film node is connected to each of its starship nodes, even if the starship already exists elsewhere in the graph.
  *
  * @param hero - The hero to generate edges for.
  * @param films - The films the hero appears in.

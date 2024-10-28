@@ -8,9 +8,10 @@
 		"jsx": "react-jsx",
 		"esModuleInterop": true,
 		// here I creating alliases for paths
+		"baseUrl": "./",
 		"paths": {
-			"@/*": ["./src/*"],
-			"@img/*": ["./public/img/*"]
+			"@/*": ["src/*"],
+			"@img/*": ["public/img/*"]
 		}
 	},
 	"exclude": ["node_modules"]
