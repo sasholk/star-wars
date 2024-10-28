@@ -2,12 +2,11 @@
 
 ## 📑 Table of Contents
 1. [Links](#-links)
-2. [Design](#-design)
-3. [Description](#-description)
-4. [Used Technologies](#%EF%B8%8F-used-technologies)
-5. [Quick Start](#-quick-start)
-6. [Run Tests](#-run-tests)
-7. [Additional Information](#additional-information)
+2. [Description](#-description)
+3. [Used Technologies](#-used-technologies)
+4. [Quick Start](#-quick-start)
+5. [Run Tests](#-run-tests)
+6. [Additional Information](#-additional-information)
 
 ---
 
@@ -36,7 +35,7 @@
 - React Flow
 - Jest
 
-###⚡ **Quick Start**
+### ⚡ **Quick Start**
 
 1. **Clone the repository:**
     
