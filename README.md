@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
+# ⭐ Star Wars Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 **Links:**
 
-Currently, two official plugins are available:
+- **Live Preview:** [Star Wars App](https://671fb2752fc4ed641576e42f--sasholk-star-wars.netlify.app/)
+- **API Link:** [Star Wars API](https://sw-api.starnavi.io/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🎨 **Design:** No design link available.
 
-## Expanding the ESLint configuration
+✨ **Description**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- This is a Star Wars-themed application built using React, Vite, TypeScript, Tailwind CSS, and Module SCSS.
+- The project features dynamic animations implemented with Framer Motion for a smooth user experience.
+- It leverages TanStack Query for API requests, caching, and managing asynchronous states.
+- Integrated React Flow to create and display graphs with custom nodes, generating nodes and edges from the API.
+- Jest is used for writing unit tests, ensuring component reliability and robustness.
 
-- Configure the top-level `parserOptions` property like this:
+🛠️ **Used Technologies:**
 
-```js
-export default tseslint.config({
-	languageOptions: {
-		// other options...
-		parserOptions: {
-			project: ['./tsconfig.node.json', './tsconfig.app.json'],
-			tsconfigRootDir: import.meta.dirname
-		}
-	}
-})
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- Module SCSS
+- Framer Motion
+- TanStack Query
+- React Flow
+- Jest
+
+⚡ **Quick Start**
+
+1. **Clone the repository:**
+    
+```bash
+git clone https://github.com/sasholk/star-wars.git
+cd star-wars
 ```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-	// Set the react version
-	settings: { react: { version: '18.3' } },
-	plugins: {
-		// Add the react plugin
-		react
-	},
-	rules: {
-		// other rules...
-		// Enable its recommended rules
-		...react.configs.recommended.rules,
-		...react.configs['jsx-runtime'].rules
-	}
-})
+    
+2. **Install dependencies:**
+    
+```bash
+npm install
 ```
+    
+3. **Start the development server:**
+    
+```bash
+npm run dev
+```
+    
+4. **Open** [http://localhost:5173/](http://localhost:5173/) **in your browser** to view the app.
+    
+
+🧪 **Run Tests:**
+
+- To run the test suite, use the command:
+    
+```bash
+npm run test
+```
+    
+
+💬 **Additional Information**
+
+- The app supports animations for enhanced interactivity.
+- Custom components are modular and reusable, making the codebase scalable and maintainable.
+- The graph visualization and custom nodes allow for a detailed view of data relationships from the API.
