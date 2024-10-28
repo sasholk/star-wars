@@ -1,4 +1,4 @@
-import groguImage from '@img/grogu.svg'
+import groguImage from '@/assets/img/grogu.svg'
 import { Link } from '@tanstack/react-router'
 
 /**
