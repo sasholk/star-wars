@@ -3,9 +3,8 @@ import { PageTransition } from '@/components/shared/PageTransion'
 import { HeroesPage } from '@/pages/heroes'
 import { createLazyFileRoute } from '@tanstack/react-router'
 
-
 export const Route = createLazyFileRoute('/heroes/')({
-	component: Heroes
+  component: Heroes
 })
 
 /**
@@ -18,9 +17,9 @@ export const Route = createLazyFileRoute('/heroes/')({
  * provides a nice animation when navigating between routes.
  */
 export function Heroes() {
-	return (
-		<PageTransition>
-			<HeroesPage />
-		</PageTransition>
-	)
+  return (
+    <PageTransition>
+      <HeroesPage />
+    </PageTransition>
+  )
 }

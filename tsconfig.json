@@ -1,18 +1,18 @@
 {
-	"files": [],
-	"references": [
-		{ "path": "./tsconfig.app.json" },
-		{ "path": "./tsconfig.node.json" }
-	],
-	"compilerOptions": {
-		"jsx": "react-jsx",
-		"esModuleInterop": true,
-		// here I creating alliases for paths
-		"baseUrl": "./",
-		"paths": {
-			"@/*": ["src/*"],
-			"@img/*": ["public/img/*"]
-		}
-	},
-	"exclude": ["node_modules"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    // here I creating alliases for paths
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@img/*": ["public/img/*"]
+    }
+  },
+  "exclude": ["node_modules"]
 }

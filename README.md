@@ -1,6 +1,7 @@
 # ⭐ Star Wars Project
 
 ## 📑 Table of Contents
+
 1. [Links](#-links)
 2. [Description](#-description)
 3. [Used Technologies](#-used-technologies)
@@ -38,35 +39,34 @@
 ### ⚡ **Quick Start**
 
 1. **Clone the repository:**
-    
+
 ```bash
 git clone https://github.com/sasholk/star-wars.git
 cd star-wars
 ```
-    
+
 2. **Install dependencies:**
-    
+
 ```bash
 npm install
 ```
-    
+
 3. **Start the development server:**
-    
+
 ```bash
 npm run dev
 ```
-    
+
 4. **Open** [http://localhost:5173/](http://localhost:5173/) **in your browser** to view the app.
-    
 
 ### 🧪 **Run Tests:**
 
 - To run the test suite, use the command:
-    
+
 ```bash
 npm run test
 ```
-    
+
 ### 💬 **Additional Information**
 
 - The app supports animations for enhanced interactivity.

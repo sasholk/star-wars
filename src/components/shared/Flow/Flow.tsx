@@ -1,18 +1,17 @@
+import CustomNode from './CustomNode'
+import styles from '@/styles/gradient.module.scss'
+import { Edge, Node } from '@/types/Flow'
 import { Controls, ReactFlow } from '@xyflow/react'
 import '@xyflow/react/dist/base.css'
 import React from 'react'
 
-import styles from '@/styles/gradient.module.scss'
-import { Edge, Node } from '@/types/Flow'
-import CustomNode from './CustomNode'
-
 interface Props {
-	nodes: Node[]
-	edges: Edge[]
+  nodes: Node[]
+  edges: Edge[]
 }
 
 const nodeTypes = {
-	custom: CustomNode
+  custom: CustomNode
 }
 
 /**
@@ -49,17 +48,17 @@ const nodeTypes = {
  * @returns {React.ReactElement} The rendered graph component.
  */
 export const Flow: React.FC<Props> = ({ nodes, edges }) => {
-	return (
-		<div className={`${styles.gradient} mb-14`}>
-			<ReactFlow
-				defaultNodes={nodes}
-				defaultEdges={edges}
-				nodeTypes={nodeTypes}
-				fitView
-				className={`!h-[80vh] rounded-lg`}
-			>
-				<Controls />
-			</ReactFlow>
-		</div>
-	)
+  return (
+    <div className={`${styles.gradient} mb-14`}>
+      <ReactFlow
+        defaultNodes={nodes}
+        defaultEdges={edges}
+        nodeTypes={nodeTypes}
+        fitView
+        className={`!h-[80vh] rounded-lg`}
+      >
+        <Controls />
+      </ReactFlow>
+    </div>
+  )
 }

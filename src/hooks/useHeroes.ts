@@ -9,12 +9,12 @@ import { useInfiniteQuery } from '@tanstack/react-query'
  * @returns An object containing an array of hero results and functions to fetch more data.
  */
 export const useHeroes = (searchQuery: string = '') => {
-	return useInfiniteQuery({
-		queryKey: ['heroes', searchQuery],
-		queryFn: async ({ pageParam = 1 }) =>
-			heroService.getAll(pageParam, searchQuery),
-		select: data => data.pages.flatMap(page => page.results),
-		initialPageParam: 1,
-		getNextPageParam: lastPage => lastPage.nextPage
-	})
+  return useInfiniteQuery({
+    queryKey: ['heroes', searchQuery],
+    queryFn: async ({ pageParam = 1 }) =>
+      heroService.getAll(pageParam, searchQuery),
+    select: data => data.pages.flatMap(page => page.results),
+    initialPageParam: 1,
+    getNextPageParam: lastPage => lastPage.nextPage
+  })
 }

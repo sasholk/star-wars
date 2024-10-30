@@ -1,35 +1,35 @@
 import { forwardRef } from 'react'
 
 interface ButtonOptions {
-	variant?: 'primary' | 'secondary' | 'outlined'
+  variant?: 'primary' | 'secondary' | 'outlined'
 }
 
 type Ref = HTMLButtonElement
 
 export type ButtonProps = React.DetailedHTMLProps<
-	React.ButtonHTMLAttributes<HTMLButtonElement>,
-	HTMLButtonElement
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
 > &
-	ButtonOptions
+  ButtonOptions
 
 const Button = forwardRef<Ref, ButtonProps>((props, ref) => {
-	const {
-		type = 'button',
-		children,
-		className,
-		variant = 'outlined',
-		...rest
-	} = props
+  const {
+    type = 'button',
+    children,
+    className,
+    variant = 'outlined',
+    ...rest
+  } = props
 
-	return (
-		<button
-			ref={ref}
-			className={`btn ${variant} ${className}`}
-			{...rest}
-		>
-			{children}
-		</button>
-	)
+  return (
+    <button
+      ref={ref}
+      className={`btn ${variant} ${className}`}
+      {...rest}
+    >
+      {children}
+    </button>
+  )
 })
 
 Button.displayName = 'Button'

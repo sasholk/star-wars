@@ -9,9 +9,9 @@ import { useQuery } from '@tanstack/react-query'
  * @returns A query object containing the list of starships and query status.
  */
 export function useStarships(id: string) {
-	return useQuery({
-		queryKey: ['ships', id],
-		queryFn: async () => starshipService.getStarshipsForHero(id),
-		select: data => data.results
-	})
+  return useQuery({
+    queryKey: ['ships', id],
+    queryFn: async () => starshipService.getStarshipsForHero(id),
+    select: data => data.results
+  })
 }

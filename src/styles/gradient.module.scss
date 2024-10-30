@@ -1,48 +1,48 @@
 @property --angle {
-	syntax: '<angle>';
-	inherits: true;
-	initial-value: 0deg;
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
 }
 
 .gradient {
-	position: relative;
-	background-color: rgb(27, 30, 32);
-	border-radius: 8px;
+  position: relative;
+  background-color: rgb(27, 30, 32);
+  border-radius: 8px;
 
-	&::after,
-	&::before {
-		content: '';
+  &::after,
+  &::before {
+    content: '';
 
-		position: absolute;
-		z-index: -1;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-		box-sizing: unset;
-		border-radius: inherit;
-		width: 100%;
-		height: 100%;
-		padding: 2px;
+    box-sizing: unset;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    padding: 2px;
 
-		--angle: 0deg;
-		background-image: conic-gradient(from var(--angle), cyan, blue, cyan);
-		animation: autoRotate 8s linear infinite;
-	}
+    --angle: 0deg;
+    background-image: conic-gradient(from var(--angle), cyan, blue, cyan);
+    animation: autoRotate 8s linear infinite;
+  }
 
-	&::after {
-		filter: blur(60px);
-	}
+  &::after {
+    filter: blur(60px);
+  }
 
-	&.noBlur {
-		&::after {
-			filter: none;
-		}
-	}
+  &.noBlur {
+    &::after {
+      filter: none;
+    }
+  }
 }
 
 @keyframes autoRotate {
-	to {
-		--angle: 360deg;
-	}
+  to {
+    --angle: 360deg;
+  }
 }

@@ -9,9 +9,9 @@ import { useQuery } from '@tanstack/react-query'
  * @returns A promise that resolves to the data containing the list of films.
  */
 export function useFilms(id: string) {
-	return useQuery({
-		queryKey: ['films', id],
-		queryFn: async () => filmService.getFilmsForHero(id),
-		select: data => data.results
-	})
+  return useQuery({
+    queryKey: ['films', id],
+    queryFn: async () => filmService.getFilmsForHero(id),
+    select: data => data.results
+  })
 }

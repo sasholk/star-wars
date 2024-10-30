@@ -29,58 +29,58 @@ import { useState } from 'react'
  * scrolls to the bottom of the list.
  */
 export const HeroesPage: React.FC = () => {
-	const [searchQuery, setSearchQuery] = useState('')
-	const [clearInput, setClearInput] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [clearInput, setClearInput] = useState(false)
 
-	// Fetch heroes with the current search query
-	const { data, error, fetchNextPage, hasNextPage, status } =
-		useHeroes(searchQuery)
+  // Fetch heroes with the current search query
+  const { data, error, fetchNextPage, hasNextPage, status } =
+    useHeroes(searchQuery)
 
-	// Ref for infinite scroll
-	const loadMoreRef = useInfiniteScroll(hasNextPage, fetchNextPage)
+  // Ref for infinite scroll
+  const loadMoreRef = useInfiniteScroll(hasNextPage, fetchNextPage)
 
-	// Function to clear the search query and input
-	const clearSearch = () => {
-		setSearchQuery('')
-		setClearInput(true) // Set clearInput to true to reset the input field
+  // Function to clear the search query and input
+  const clearSearch = () => {
+    setSearchQuery('')
+    setClearInput(true) // Set clearInput to true to reset the input field
 
-		// Reset clearInput after a short delay to allow SearchBar to detect change
-		setTimeout(() => setClearInput(false), 100)
-	}
-	if (error) {
-		return <Error error={error} />
-	}
+    // Reset clearInput after a short delay to allow SearchBar to detect change
+    setTimeout(() => setClearInput(false), 100)
+  }
+  if (error) {
+    return <Error error={error} />
+  }
 
-	return (
-		<div className='mb-20 md:mt-10'>
-			<div className='mb-10 flex flex-col items-center justify-between gap-6 lg:flex-row'>
-				<h1 className='h1'>Heroes collection</h1>
+  return (
+    <div className='mb-20 md:mt-10'>
+      <div className='mb-10 flex flex-col items-center justify-between gap-6 lg:flex-row'>
+        <h1 className='h1'>Heroes collection</h1>
 
-				<SearchBar
-					onSearch={setSearchQuery}
-					clearInput={clearInput}
-				/>
-			</div>
+        <SearchBar
+          onSearch={setSearchQuery}
+          clearInput={clearInput}
+        />
+      </div>
 
-			{!!searchQuery.length && (
-				<BackButton
-					clearSearch={clearSearch}
-					className='mb-4'
-				/>
-			)}
+      {!!searchQuery.length && (
+        <BackButton
+          clearSearch={clearSearch}
+          className='mb-4'
+        />
+      )}
 
-			{status === 'success' && data.length === 0 && (
-				<div className='col-span-full text-center text-red-500'>
-					WOOOPS! There are no heroes
-				</div>
-			)}
+      {status === 'success' && data.length === 0 && (
+        <div className='col-span-full text-center text-red-500'>
+          WOOOPS! There are no heroes
+        </div>
+      )}
 
-			<HeroesCatalog data={data} />
+      <HeroesCatalog data={data} />
 
-			<div
-				ref={loadMoreRef}
-				className='mt-4 h-10'
-			></div>
-		</div>
-	)
+      <div
+        ref={loadMoreRef}
+        className='mt-4 h-10'
+      />
+    </div>
+  )
 }

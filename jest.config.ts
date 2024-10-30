@@ -1,20 +1,20 @@
 export default {
-	testEnvironment: 'jsdom',
-	transform: {
-		'^.+\\.tsx?$': 'ts-jest'
-	},
+  testEnvironment: 'jsdom',
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest'
+  },
 
-	globals: {
-		'ts-jest': {
-			diagnostics: false
-		}
-	},
+  globals: {
+    'ts-jest': {
+      diagnostics: false
+    }
+  },
 
-	moduleNameMapper: {
-		'^.+\\.(css|less|scss)$': 'identity-obj-proxy',
-		'^.+\\.svg$': 'jest-transformer-svg',
-		'^@/(.*)$': '<rootDir>/src/$1'
-	},
+  moduleNameMapper: {
+    '^.+\\.(css|less|scss)$': 'identity-obj-proxy',
+    '^.+\\.svg$': 'jest-transformer-svg',
+    '^@/(.*)$': '<rootDir>/src/$1'
+  },
 
-	setupFilesAfterEnv: ['<rootDir>/jest.setup.ts']
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts']
 }

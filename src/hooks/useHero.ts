@@ -1,6 +1,5 @@
-import { useQuery } from '@tanstack/react-query'
-
 import heroService from '@/api/hero.service'
+import { useQuery } from '@tanstack/react-query'
 
 /**
  * Fetches a hero by id from the API.
@@ -9,9 +8,9 @@ import heroService from '@/api/hero.service'
  * @returns A promise that resolves to the hero data.
  */
 export function useHero(id: string) {
-	return useQuery({
-		queryKey: ['hero', id],
-		queryFn: async () => heroService.getById(id),
-		select: data => data
-	})
+  return useQuery({
+    queryKey: ['hero', id],
+    queryFn: async () => heroService.getById(id),
+    select: data => data
+  })
 }
