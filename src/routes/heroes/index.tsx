@@ -5,7 +5,6 @@ import { fallback, zodSearchValidator } from '@tanstack/router-zod-adapter'
 import { z } from 'zod'
 
 const productSearchSchema = z.object({
-  page: fallback(z.number(), 1).default(1),
   search: fallback(z.string(), '').default('')
 })
 
