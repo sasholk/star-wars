@@ -1,9 +1,8 @@
-import Button from '@/components/ui/Button'
+import { Link } from '@tanstack/react-router'
 import { Search } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 interface Props {
-  onSearch: (query: string) => void
   clearInput?: boolean
   className?: string
 }
@@ -19,16 +18,11 @@ interface Props {
  *   `clearInput` is set to true
  * @returns {React.ReactElement} The search bar component
  */
-export const SearchBar: React.FC<Props> = ({
-  onSearch,
-  className,
-  clearInput
-}) => {
+export const SearchBar: React.FC<Props> = ({ className, clearInput }) => {
   const [inputValue, setInputValue] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    onSearch(inputValue)
   }
 
   useEffect(() => {
@@ -65,13 +59,14 @@ export const SearchBar: React.FC<Props> = ({
           required
         />
 
-        <Button
+        <Link
           type='submit'
-          variant='primary'
-          className='absolute bottom-2.5 end-2.5'
+          className='btn primary absolute bottom-2.5 end-2.5'
+          to='.'
+          search={prev => ({ ...prev, search: inputValue })}
         >
           Search
-        </Button>
+        </Link>
       </div>
     </form>
   )

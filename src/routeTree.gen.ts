@@ -13,12 +13,12 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as HeroesIndexImport } from './routes/heroes/index'
 import { Route as HeroesHeroIdImport } from './routes/heroes/$heroId'
 
 // Create Virtual Routes
 
 const IndexLazyImport = createFileRoute('/')()
-const HeroesIndexLazyImport = createFileRoute('/heroes/')()
 
 // Create/Update Routes
 
@@ -28,11 +28,11 @@ const IndexLazyRoute = IndexLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
 
-const HeroesIndexLazyRoute = HeroesIndexLazyImport.update({
+const HeroesIndexRoute = HeroesIndexImport.update({
   id: '/heroes/',
   path: '/heroes/',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/heroes/index.lazy').then((d) => d.Route))
+} as any)
 
 const HeroesHeroIdRoute = HeroesHeroIdImport.update({
   id: '/heroes/$heroId',
@@ -62,7 +62,7 @@ declare module '@tanstack/react-router' {
       id: '/heroes/'
       path: '/heroes'
       fullPath: '/heroes'
-      preLoaderRoute: typeof HeroesIndexLazyImport
+      preLoaderRoute: typeof HeroesIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -73,20 +73,20 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
   '/heroes/$heroId': typeof HeroesHeroIdRoute
-  '/heroes': typeof HeroesIndexLazyRoute
+  '/heroes': typeof HeroesIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
   '/heroes/$heroId': typeof HeroesHeroIdRoute
-  '/heroes': typeof HeroesIndexLazyRoute
+  '/heroes': typeof HeroesIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
   '/heroes/$heroId': typeof HeroesHeroIdRoute
-  '/heroes/': typeof HeroesIndexLazyRoute
+  '/heroes/': typeof HeroesIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -101,13 +101,13 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
   HeroesHeroIdRoute: typeof HeroesHeroIdRoute
-  HeroesIndexLazyRoute: typeof HeroesIndexLazyRoute
+  HeroesIndexRoute: typeof HeroesIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
   HeroesHeroIdRoute: HeroesHeroIdRoute,
-  HeroesIndexLazyRoute: HeroesIndexLazyRoute,
+  HeroesIndexRoute: HeroesIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -134,7 +134,7 @@ export const routeTree = rootRoute
       "filePath": "heroes/$heroId.tsx"
     },
     "/heroes/": {
-      "filePath": "heroes/index.lazy.tsx"
+      "filePath": "heroes/index.tsx"
     }
   }
 }

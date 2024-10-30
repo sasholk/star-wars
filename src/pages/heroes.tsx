@@ -4,6 +4,7 @@ import { HeroesCatalog } from '@/components/shared/HeroesCatalog'
 import { SearchBar } from '@/components/shared/SearchBar/SearchBar'
 import { useHeroes } from '@/hooks/useHeroes'
 import useInfiniteScroll from '@/hooks/useInfiniteScroll'
+import { getRouteApi } from '@tanstack/react-router'
 import { useState } from 'react'
 
 /**
@@ -28,25 +29,28 @@ import { useState } from 'react'
  * scrolling behavior. It will fetch the next page of heroes when the user
  * scrolls to the bottom of the list.
  */
+
+const routeApi = getRouteApi('/heroes/')
+
 export const HeroesPage: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('')
+  const { search } = routeApi.useSearch()
+
   const [clearInput, setClearInput] = useState(false)
 
   // Fetch heroes with the current search query
-  const { data, error, fetchNextPage, hasNextPage, status } =
-    useHeroes(searchQuery)
+  const { data, error, fetchNextPage, hasNextPage, status } = useHeroes(search)
 
   // Ref for infinite scroll
   const loadMoreRef = useInfiniteScroll(hasNextPage, fetchNextPage)
 
   // Function to clear the search query and input
   const clearSearch = () => {
-    setSearchQuery('')
     setClearInput(true) // Set clearInput to true to reset the input field
 
     // Reset clearInput after a short delay to allow SearchBar to detect change
     setTimeout(() => setClearInput(false), 100)
   }
+
   if (error) {
     return <Error error={error} />
   }
@@ -56,13 +60,10 @@ export const HeroesPage: React.FC = () => {
       <div className='mb-10 flex flex-col items-center justify-between gap-6 lg:flex-row'>
         <h1 className='h1'>Heroes collection</h1>
 
-        <SearchBar
-          onSearch={setSearchQuery}
-          clearInput={clearInput}
-        />
+        <SearchBar clearInput={clearInput} />
       </div>
 
-      {!!searchQuery.length && (
+      {!!search.length && (
         <BackButton
           clearSearch={clearSearch}
           className='mb-4'

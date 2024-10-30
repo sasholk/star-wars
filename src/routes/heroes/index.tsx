@@ -1,10 +1,17 @@
-// Route files with the .lazy.tsx extension are lazy loaded via separate bundles to keep the main bundle size as lean as possible.
 import { PageTransition } from '@/components/shared/PageTransion'
 import { HeroesPage } from '@/pages/heroes'
-import { createLazyFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
+import { fallback, zodSearchValidator } from '@tanstack/router-zod-adapter'
+import { z } from 'zod'
 
-export const Route = createLazyFileRoute('/heroes/')({
-  component: Heroes
+const productSearchSchema = z.object({
+  page: fallback(z.number(), 1).default(1),
+  search: fallback(z.string(), '').default('')
+})
+
+export const Route = createFileRoute('/heroes/')({
+  component: Heroes,
+  validateSearch: zodSearchValidator(productSearchSchema)
 })
 
 /**
