@@ -32,7 +32,7 @@
 - Tailwind CSS
 - Module SCSS
 - Framer Motion
-- TanStack Query
+- TanStack Query/Router
 - React Flow
 - Jest
 
