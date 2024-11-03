@@ -1,6 +1,6 @@
 import { Hero } from './Hero'
 
-export interface HeroResponse {
+export type HeroResponse = {
   results: Hero[]
   next?: string
 }
