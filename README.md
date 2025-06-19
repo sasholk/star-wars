@@ -13,7 +13,7 @@
 
 ### 🔗 **Links:**
 
-- **Live Preview:** [Star Wars App](https://671fb2752fc4ed641576e42f--sasholk-star-wars.netlify.app/)
+- **Live Preview:** [Star Wars App](https://sasholk-star-wars.netlify.app/)
 - **API Link:** [Star Wars API](https://sw-api.starnavi.io/)
 
 ### ✨ **Description**
