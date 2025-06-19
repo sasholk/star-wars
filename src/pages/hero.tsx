@@ -42,8 +42,8 @@ export const HeroPage: React.FC = () => {
   if (isLoading) return <Loader />
   if (isError) return <div>Error loading data, please try again</div>
 
-  const nodes = generateNodes(hero!, films, ships)
-  const edges = generateEdges(hero!, films, ships)
+  const nodes = generateNodes(hero!, films!, ships!)
+  const edges = generateEdges(hero!, films!, ships!)
 
   return (
     <div className='relative flex flex-col gap-10'>

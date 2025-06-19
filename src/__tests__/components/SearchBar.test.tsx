@@ -6,12 +6,7 @@ describe('SearchBar Component', () => {
   const handleSearchMock = jest.fn()
 
   const setup = (clearInput = false) => {
-    render(
-      <SearchBar
-        onSearch={handleSearchMock}
-        clearInput={clearInput}
-      />
-    )
+    render(<SearchBar clearInput={clearInput} />)
 
     const input = screen.getByPlaceholderText('write a hero name')
     const button = screen.getByRole('button', { name: /search/i })
